@@ -18,7 +18,7 @@
 import { computed } from "@vue/reactivity";
 import { useRouter } from 'vue-router'
 const router = useRouter()
-// 当前路由名称
+// 当前路由名称test
 const currentTab = computed(() => {
   return router.currentRoute.value.name
 })
