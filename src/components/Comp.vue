@@ -1,7 +1,7 @@
 <template>
   {{name}}
   {{counter}}
-  <button @click="store.commit('add')">
+  <button @click="add">
     加
   </button>
   <button @click="reduce">
@@ -25,7 +25,8 @@ function add() {
   store.commit('add')
 }
 const reduce = function() {
-  Message.success('傻妞，想啥呢') 
+  console.log(2222)
+  // Message.success('傻妞，想啥呢') 
 }
 defineProps({
   userinfo: {
