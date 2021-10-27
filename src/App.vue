@@ -4,10 +4,9 @@
       v-for="(item, index) in routerList"
       :key="index"
     >
-      <router-link :to="item.path" :class="{'current-tab': item.name === currentTab}">{{item.name}}</router-link>
+      <router-link :to="item.path" :class="{'current-tab': item.name === currentTab}">{{item.text}}</router-link>
     </li>
   </ul>
-  {{currentTab}}
   <div>
     <router-view></router-view>
   </div>
@@ -23,8 +22,8 @@ const currentTab = computed(() => {
   return router.currentRoute.value.name
 })
 const routerList = [
-  { name: 'home', path: '/', text: '首页' },
-  { name: 'user', path: '/user', text: '数据' }
+  { name: 'home', path: '/', text: '你是猪吗' },
+  { name: 'user', path: '/user', text: '袁老大' }
 ]
 </script>
 <style lang="scss">

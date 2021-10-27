@@ -2,15 +2,15 @@
   {{name}}
   {{counter}}
   <button @click="store.commit('add')">
-    加法
+    加
   </button>
   <button @click="reduce">
-    减法
+    减
   </button>
-  {{num}}
 </template>
 <script setup lang="ts">
-import { ref, PropType, computed } from 'vue'
+import { Message } from 'element3'
+import { PropType, computed, getCurrentInstance } from 'vue'
 import { useStore } from 'vuex'
 import { key } from '../store'
 type UserInfo = {
@@ -24,9 +24,8 @@ const name = computed(() => store.state.name)
 function add() {
   store.commit('add')
 }
-const num = ref(100)
 const reduce = function() {
-  num.value--
+  Message.success('傻妞，想啥呢') 
 }
 defineProps({
   userinfo: {

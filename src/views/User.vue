@@ -6,9 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, toRef } from 'vue'
+import { ref } from 'vue'
 let a = {}
-let userList = ref([])
+let userList = ref({})
 const getUser = function() {
   fetch('/api/getUsers').then(res => res.json().then(res => {
     console.log(res.data);

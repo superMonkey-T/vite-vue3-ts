@@ -1,6 +1,6 @@
 <template>
   <Comp :userinfo="data"></Comp>
-  <div>我是首页</div>
+  <div>傻妞你好啊</div>
 </template>
 
 <script setup lang="ts">

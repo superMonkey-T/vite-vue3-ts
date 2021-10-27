@@ -6,7 +6,7 @@ export default [
       return {
         code: 0,
         message: 'ok',
-        data: ['张三', '李四', '王五', '赵六']
+        data: ['袁总', '袁老大', '傻妞', '小傻子']
       }
     }
   }

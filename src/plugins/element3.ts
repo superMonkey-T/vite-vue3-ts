@@ -7,9 +7,10 @@
 // }
 
 // 按需加载
-import { ElButton } from "element3"
+import { ElButton, Message } from "element3"
 import 'element3/lib/theme-chalk/button.css'
+import 'element3/lib/theme-chalk/message.css'
 
 export default function(app: any) {
-  app.use(ElButton)
+  app.use(ElButton).use(Message)
 }

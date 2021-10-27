@@ -11,8 +11,8 @@ export const key: InjectionKey<Store<State>> = Symbol()
 
 export default createStore({
   state: {
-    counter: 3,
-    name: '李逵'
+    counter: 18,
+    name: '袁总今年'
   },
   mutations: {
     add(state) {
