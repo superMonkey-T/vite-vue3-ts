@@ -25,8 +25,8 @@ function add() {
   store.commit('add')
 }
 const reduce = function() {
-  console.log(2222)
-  ElMessage.success('傻妞，想啥呢') 
+  // console.log(2222)
+  // ElMessage.success('傻妞，想啥呢') 
 }
 defineProps({
   userinfo: {
