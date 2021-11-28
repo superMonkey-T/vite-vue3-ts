@@ -9,6 +9,8 @@
   "dependencies": {
     "element3": "0.0.40",
     "mockjs": "^1.1.0",
+    "sass-loader": "^12.3.0",
+    "unplugin-vue-components": "^0.16.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.11",
     "vuex": "^4.0.2"

@@ -1,18 +1,8 @@
 <template>
-  <ul class="nav-wrap">
-    <li
-      v-for="(item, index) in routerList"
-      :key="index"
-    >
-      <router-link :to="item.path" :class="{'current-tab': item.name === currentTab}">{{item.text}}</router-link>
-    </li>
-  </ul>
-  <div>
+  <div class="app-wrap">
     <router-view></router-view>
   </div>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
 </template>
-
 <script setup lang="ts">
 import { computed } from "@vue/reactivity";
 import { useRouter } from 'vue-router'
@@ -27,27 +17,12 @@ const routerList = [
 ]
 </script>
 <style lang="scss">
+@import './styles/index.scss'; // 全局自定义样式
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
-li {
-  list-style: none;
-}
-.nav-wrap {
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: #373d41;
-  }
-}
-.current-tab {
-  color: #3385f2 !important;
+.app-wrap {
+  height: 100%;
+  width: 100%;
 }
 </style>

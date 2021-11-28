@@ -5,7 +5,7 @@ export default createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/Index.vue')
+      component: () => import('../views/Home.vue')
     }, {
       path: '/user',
       name: 'user',

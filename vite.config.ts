@@ -7,5 +7,8 @@ export default defineConfig({
   server: {
     port: 4000
   },
-  plugins: [vue(), viteMockServe({})]
+  plugins: [
+    vue(),
+    viteMockServe({}) // mock数据
+  ]
 })

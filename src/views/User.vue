@@ -1,5 +1,5 @@
 <template>
-  <el-button type="parmily" @click="getUser">获取数据</el-button>
+  <el-button type="parmily" @click="getUser">获取数据1</el-button>
   <div v-for="(item, index) in userList" :key="index">
     姓名：{{item}}
   </div>

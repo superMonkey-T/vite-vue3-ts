@@ -1,16 +1,15 @@
+import 'element3/lib/theme-chalk/index.css'
+import { ElButton } from 'element3'
+import { ElInput } from 'element3'
+import { ElContainer } from 'element3'
+import { ElAside } from 'element3'
+import { ElMain } from 'element3'
 
-// 全局引入element3
-// import element3 from 'element3'
-// import 'element3/lib/theme-chalk/index.css'
-// export default function(app: any) {
-//   app.use(element3)
-// }
-
-// 按需加载
-import { ElButton, Message } from "element3"
-import 'element3/lib/theme-chalk/button.css'
-import 'element3/lib/theme-chalk/message.css'
 
 export default function(app: any) {
-  app.use(ElButton).use(Message)
+  app.use(ElButton)
+  .use(ElInput)
+  .use(ElContainer)
+  .use(ElAside)
+  .use(ElMain)
 }
