@@ -10,6 +10,10 @@ export default createRouter({
       path: '/user',
       name: 'user',
       component: () => import('../views/User.vue')
+    }, {
+      path: '/iframe',
+      name: 'iframe',
+      component: () => import('../views/Iframe.vue')
     }
   ]
 })

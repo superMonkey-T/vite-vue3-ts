@@ -64,6 +64,7 @@ const dataList = ref([{
 }])
 const getRightDataList = () => {
   fetch('/api/getDefaultList').then(res => res.json().then(res => {
+    console.log(res.data, 'res.data')
     dataList.value = res.data
   }))
 }
