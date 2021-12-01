@@ -2,7 +2,7 @@
 <div class="home-wrap">
   <section class="home-left">
     <div class="home-left__logo">LOGO</div>
-    <div class="home-left__list" v-if="menuList.length > 0">
+    <div class="home-left__list">
       <ul class="left__list__ul">
         <li
           v-for="(item, index) in menuList"
@@ -35,7 +35,7 @@
       </div> -->
     </div>
     <div class="home-right-list">
-      <ul class="right-list__ul">
+      <ul class="right-list__ul" v-if="dataList.length > 0">
         <li class="right-list__li" v-for="(item, index) in dataList" :key="index">
           <div class="right-list__user">
             <img class="right-list__user__photo" :src="item.userPhoto" alt="用户头像">
