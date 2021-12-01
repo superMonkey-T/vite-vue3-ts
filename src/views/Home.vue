@@ -2,7 +2,7 @@
 <div class="home-wrap">
   <section class="home-left">
     <div class="home-left__logo">LOGO</div>
-    <div class="home-left__list">
+    <div class="home-left__list" v-if="menuList.length > 0">
       <ul class="left__list__ul">
         <li
           v-for="(item, index) in menuList"
