@@ -54,6 +54,13 @@
 </template>
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+const dataList = ref([])
+const getRightDataList = () => {
+  fetch('/api/getDefaultList').then(res => res.json().then(res => {
+    dataList.value = res.data
+  }))
+}
+getRightDataList()
 const menuList = ref([{
   name: '首页',
   icon: 'icon-shouye'
@@ -79,12 +86,6 @@ const menuList = ref([{
   name: '招聘',
   icon: 'icon-zhaopin'
 }])
-const dataList = ref([])
-const getRightDataList = () => {
-  fetch('/api/getDefaultList').then(res => res.json().then(res => {
-    dataList.value = res.data
-  }))
-}
 let changeIndex = ref(0)
 const menuChange = (index: number) => {
   if (index !== changeIndex.value) {
@@ -92,7 +93,6 @@ const menuChange = (index: number) => {
     changeIndex.value = index
   }
 }
-onMounted(getRightDataList)
 </script>
 
 <style lang="scss" scoped>
