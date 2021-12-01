@@ -35,14 +35,14 @@
       </div> -->
     </div>
     <div class="home-right-list">
-      <ul class="right-list__ul" v-if="dataList.length > 0">
+      <ul class="right-list__ul">
         <li class="right-list__li" v-for="(item, index) in dataList" :key="index">
           <div class="right-list__user">
-            <img class="right-list__user__photo" :src="item?.userPhoto" alt="用户头像">
+            <img class="right-list__user__photo" :src="item.userPhoto" alt="用户头像">
             <div class="right-list__user__right">
-              <div class="list-title">{{item?.title}}</div>
-              <div class="list-subtitle">{{item?.subtitle}}</div>
-              <div class="list-date">{{item?.createDate}}</div>
+              <div class="list-title">{{item.title}}</div>
+              <div class="list-subtitle">{{item.subtitle}}</div>
+              <div class="list-date">{{item.createDate}}</div>
             </div>
           </div>
           <img class="right-list__shopimg" :src="item?.img" alt="商品图">
@@ -53,15 +53,9 @@
 </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
-const dataList = ref([{
-  userName: '',
-  userPhoto: '',
-  title: '',
-  subtitle: '',
-  createDate: '',
-  img: ''
-}])
+import { ref, reactive } from 'vue'
+import { HomeInterface } from '@/interface/HomeInterface'
+const dataList: HomeInterface = ref([])
 const getRightDataList = () => {
   fetch('/api/getDefaultList').then(res => res.json().then(res => {
     console.log(res.data, 'res.data')
@@ -69,7 +63,7 @@ const getRightDataList = () => {
   }))
 }
 getRightDataList()
-const menuList = ref([{
+const menuList = reactive([{
   name: '首页',
   icon: 'icon-shouye'
 }, {
@@ -97,7 +91,6 @@ const menuList = ref([{
 let changeIndex = ref(0)
 const menuChange = (index: number) => {
   if (index !== changeIndex.value) {
-    console.log(334444)
     changeIndex.value = index
   }
 }
