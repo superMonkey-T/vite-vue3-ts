@@ -38,14 +38,14 @@
       <ul class="right-list__ul" v-if="dataList.length > 0">
         <li class="right-list__li" v-for="(item, index) in dataList" :key="index">
           <div class="right-list__user">
-            <img class="right-list__user__photo" :src="item.userPhoto" alt="用户头像">
+            <img class="right-list__user__photo" :src="item?.userPhoto" alt="用户头像">
             <div class="right-list__user__right">
-              <div class="list-title">{{item.title}}</div>
-              <div class="list-subtitle">{{item.subtitle}}</div>
-              <div class="list-date">{{item.createDate}}</div>
+              <div class="list-title">{{item?.title}}</div>
+              <div class="list-subtitle">{{item?.subtitle}}</div>
+              <div class="list-date">{{item?.createDate}}</div>
             </div>
           </div>
-          <img class="right-list__shopimg" :src="item.img" alt="商品图">
+          <img class="right-list__shopimg" :src="item?.img" alt="商品图">
         </li>
       </ul>
     </div>
