@@ -35,8 +35,8 @@
       </div> -->
     </div>
     <div class="home-right-list">
-      <ul class="right-list__ul" v-if="dataList.length > 0">
-        <li class="right-list__li" v-for="(item, index) in dataList" :key="index">
+      <ul class="right-list__ul" v-if="data.dataList.length > 0">
+        <li class="right-list__li" v-for="(item, index) in data.dataList" :key="index">
           <div class="right-list__user">
             <img class="right-list__user__photo" :src="item?.userPhoto" alt="用户头像">
             <div class="right-list__user__right">
@@ -53,15 +53,17 @@
 </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-const dataList = ref([])
+import { ref, reactive } from 'vue'
+const data = reactive({
+  dataList: []
+})
 const getRightDataList = () => {
   fetch('/api/getDefaultList').then(res => res.json().then(res => {
-    dataList.value = res.data
+    data.dataList = res.data
   }))
 }
 getRightDataList()
-const menuList = ref([{
+const menuList = reactive([{
   name: '首页',
   icon: 'icon-shouye'
 }, {
