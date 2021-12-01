@@ -23,7 +23,7 @@
     <div class="home-right__searchline">
       <div class="home-right__search">
         <el-input placeholder="请输入搜索内容"></el-input>
-        <el-button type="primary" @click="getRightDataList">搜索</el-button>
+        <el-button type="primary">搜索</el-button>
       </div>
       <!-- <div class="home-right__sel">
         <div class="home-right__sel__sign">
@@ -53,7 +53,7 @@
 </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 const menuList = ref([{
   name: '首页',
   icon: 'icon-shouye'
@@ -92,6 +92,7 @@ const menuChange = (index: number) => {
     changeIndex.value = index
   }
 }
+onMounted(getRightDataList)
 </script>
 
 <style lang="scss" scoped>
