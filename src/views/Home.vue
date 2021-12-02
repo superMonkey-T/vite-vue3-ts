@@ -36,7 +36,6 @@
     </div>
     <div class="home-right-list">
       <ul class="right-list__ul">
-        {{dataList}}
         <li class="right-list__li" v-for="(item, index) in dataList" :key="index">
           <div class="right-list__user">
             <img class="right-list__user__photo" :src="item.userPhoto" alt="用户头像">
