@@ -1,0 +1,1 @@
+import{d as e,o as s,a as o,p as a,F as n,v as t}from"./vendor.9edffed7.js";const r=t(" ifreme文件 "),d=e({setup(e){window.addEventListener("message",(()=>{console.log("父组件穿过来的消息")}));const t=()=>{window.parent.postMessage({iframeSuccess:!0},"*")};return(e,d)=>(s(),o(n,null,[r,a("button",{onClick:t},"触发父组件")],64))}});export{d as default};

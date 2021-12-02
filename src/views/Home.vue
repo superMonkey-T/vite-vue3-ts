@@ -36,6 +36,7 @@
     </div>
     <div class="home-right-list">
       <ul class="right-list__ul">
+        {{dataList}}
         <li class="right-list__li" v-for="(item, index) in dataList" :key="index">
           <div class="right-list__user">
             <img class="right-list__user__photo" :src="item.userPhoto" alt="用户头像">
@@ -56,11 +57,12 @@
 import { ref, reactive } from 'vue'
 // import * as  HomeInterface from '@/interface/HomeInterface'
 // import { HomeList } from '@/interface/HomeInterface'
-const dataList = ref([])
+let dataList: Array<any> = reactive([])
 const getRightDataList = () => {
   fetch('/api/getDefaultList').then(res => res.json().then(res => {
-    console.log(res.data, 'res.data')
-    dataList.value = res.data
+    res.data.forEach((element: any) => {
+      dataList.push(element)
+    })
   }))
 }
 getRightDataList()
