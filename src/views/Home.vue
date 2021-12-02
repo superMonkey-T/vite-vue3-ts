@@ -53,7 +53,7 @@
 </div>
 </template>
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 // import * as  HomeInterface from '@/interface/HomeInterface'
 // import { HomeList } from '@/interface/HomeInterface'
 let dataList: Array<any> = reactive([])
@@ -64,7 +64,9 @@ const getRightDataList = () => {
     })
   }))
 }
-getRightDataList()
+onMounted(() => {
+  getRightDataList()
+})
 const menuList = reactive([{
   name: '首页',
   icon: 'icon-shouye'
