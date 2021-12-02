@@ -54,8 +54,9 @@
 </template>
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { HomeInterface } from '@/interface/HomeInterface'
-const dataList: HomeInterface = ref([])
+// import * as  HomeInterface from '@/interface/HomeInterface'
+// import { HomeList } from '@/interface/HomeInterface'
+const dataList = ref([])
 const getRightDataList = () => {
   fetch('/api/getDefaultList').then(res => res.json().then(res => {
     console.log(res.data, 'res.data')
