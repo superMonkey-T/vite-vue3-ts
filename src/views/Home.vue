@@ -1,5 +1,6 @@
 <template>
 <div class="home-wrap">
+  {{num}}
   <section class="home-left">
     <div class="home-left__logo">LOGO</div>
     <div class="home-left__list">
@@ -23,7 +24,7 @@
     <div class="home-right__searchline">
       <div class="home-right__search">
         <el-input placeholder="请输入搜索内容"></el-input>
-        <el-button type="primary">搜索</el-button>
+        <el-button type="primary" @click="search">搜索</el-button>
       </div>
       <!-- <div class="home-right__sel">
         <div class="home-right__sel__sign">
@@ -36,7 +37,7 @@
     </div>
     <div class="home-right-list">
       <ul class="right-list__ul">
-        <li class="right-list__li" v-for="(item, index) in dataList" :key="index">
+        <li class="right-list__li" v-for="(item, index) in state.dataList" :key="index">
           <div class="right-list__user">
             <img class="right-list__user__photo" :src="item.userPhoto" alt="用户头像">
             <div class="right-list__user__right">
@@ -54,18 +55,20 @@
 </template>
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue'
-// import * as  HomeInterface from '@/interface/HomeInterface'
-// import { HomeList } from '@/interface/HomeInterface'
-let dataList: Array<any> = reactive([])
+const state = reactive({
+  dataList: [],
+  loading: true
+})
+// let dataList: Array<any> = reactive([])
 const getRightDataList = () => {
+  state.loading = true
   fetch('/api/getDefaultList').then(res => res.json().then(res => {
-    res.data.forEach((element: any) => {
-      dataList.push(element)
-    })
+    state.dataList = res.data
+    state.loading = false
   }))
 }
-onMounted(() => {
-  getRightDataList()
+onMounted(async () => {
+  await getRightDataList()
 })
 const menuList = reactive([{
   name: '首页',
@@ -97,6 +100,8 @@ const menuChange = (index: number) => {
   if (index !== changeIndex.value) {
     changeIndex.value = index
   }
+}
+const search = () => {
 }
 </script>
 
