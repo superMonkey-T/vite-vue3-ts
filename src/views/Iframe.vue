@@ -2,4 +2,7 @@
   <iframe src="https://test.industry.pharmconverge.com/industryNew/index.html#/purchase" width="100%" height="100%"></iframe>
 </template>
 <script setup lang="ts">
+window.addEventListener('message',function(e){
+  alert(e.data);
+},false);
 </script>
