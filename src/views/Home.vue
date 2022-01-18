@@ -34,7 +34,7 @@
         </div>
       </div> -->
     </div>
-    <div class="home-right-list">
+    <!-- <div class="home-right-list">
       <ul class="right-list__ul">
         <li class="right-list__li" v-for="(item, index) in state.dataList" :key="index">
           <div class="right-list__user">
@@ -48,7 +48,7 @@
           <img class="right-list__shopimg" :src="item.img" alt="商品图">
         </li>
       </ul>
-    </div>
+    </div> -->
   </section>
 </div>
 </template>
