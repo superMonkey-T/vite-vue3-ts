@@ -3,6 +3,6 @@
 </template>
 <script setup lang="ts">
 window.addEventListener('message',function(e){
-  alert(e.data);
+  console.log(e, 'eeeeee')
 },false);
 </script>
