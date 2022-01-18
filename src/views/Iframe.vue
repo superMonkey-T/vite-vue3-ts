@@ -1,15 +1,5 @@
 <template>
-  ifreme文件
-  <button @click="changeParent">触发父组件</button>
+  <iframe src="https://test.industry.pharmconverge.com/industryNew/index.html#/purchase" frameborder="0"></iframe>
 </template>
 <script setup lang="ts">
-  const handleMessage = () => {
-    console.log('父组件穿过来的消息')
-  }
-  window.addEventListener('message' ,handleMessage)
-  const changeParent = () => {
-    window.parent.postMessage({
-      iframeSuccess: true
-    }, '*')
-  }
 </script>

@@ -1,6 +1,5 @@
 <template>
 <div class="home-wrap">
-  {{num}}
   <section class="home-left">
     <div class="home-left__logo">LOGO</div>
     <div class="home-left__list">
@@ -46,7 +45,7 @@
               <div class="list-date">{{item.createDate}}</div>
             </div>
           </div>
-          <img class="right-list__shopimg" :src="item?.img" alt="商品图">
+          <img class="right-list__shopimg" :src="item.img" alt="商品图">
         </li>
       </ul>
     </div>
@@ -61,14 +60,14 @@ const state = reactive({
 })
 // let dataList: Array<any> = reactive([])
 const getRightDataList = () => {
+  
+}
+onMounted(async () => {
   state.loading = true
-  fetch('/api/getDefaultList').then(res => res.json().then(res => {
+  await fetch('/api/getDefaultList').then(res => res.json().then(res => {
     state.dataList = res.data
     state.loading = false
   }))
-}
-onMounted(async () => {
-  await getRightDataList()
 })
 const menuList = reactive([{
   name: '首页',
